@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "PokeCoach",
+    "slug": "PokeCoach",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "PokeCoach"
+}
