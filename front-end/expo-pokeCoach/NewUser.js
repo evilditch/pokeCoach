@@ -96,6 +96,7 @@ const Screen2 = ({ navigation, name }) => {
     { categories.map((category, index) => 
       <>
       <Switch
+      accessibilityLabel={category.name}
         trackColor={{ false: "#767577", true: "#81b0ff" }}
         thumbColor={category.importance !== 0 ? "#f5dd4b" : "#f4f3f4"}
         ios_backgroundColor="#3e3e3e"
