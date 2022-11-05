@@ -28,7 +28,11 @@ router.post('/login', async (req, res) => {
 router.post('/Signin', async (req,res) => {
     const body = req.body;
 
-    const isUser = await Auth.findByPk(body.email);
+    const isUser = await Auth.findByPk(body.email, {
+        attributes: {
+            exclude: ['secretKey']
+        }
+    });
 
     if(isUser){
         return res.status(401).json({

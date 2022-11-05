@@ -22,6 +22,10 @@ User.init({
                 msg: "Validation isEmail failed"
             }
         }
+    },
+    pronounce:{
+        type: DataTypes.STRING,
+        defaultValue: "Other"
     }
 }, {
     sequelize: dataSeque,

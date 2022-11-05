@@ -1,5 +1,5 @@
 import express from 'express';
-import { User, Challenge } from "../models/index.js";
+import { Challenge } from "../models/index.js";
 
 const router = express.Router();
 
@@ -12,7 +12,11 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req,res) => {
     const id = req.params.id;
 
-    const challenge = await Challenge.findByPk(id);
+    const challenge = await Challenge.findByPk(id, {
+        attributes: {
+            exclude: ['userId']
+        }
+    });
     if(challenge){
         challenge.isPrimary = !challenge.isPrimary;
         await challenge.save();
