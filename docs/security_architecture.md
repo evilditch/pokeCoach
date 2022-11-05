@@ -1,4 +1,4 @@
-# Security of PokeCoach
+# Security of GuideMeThrough
 
 - when a new user created, an encryption key is generated
 - access to the encryption key is only with the users password
