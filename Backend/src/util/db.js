@@ -4,6 +4,7 @@ import { AUTH_URL, DATA_URL } from './config.js';
 const dataSeque = new Sequelize(DATA_URL);
 const authSeque = new Sequelize(AUTH_URL);
 
+
 const connectToDatabase = async () => {
     try{
         await dataSeque.authenticate();
