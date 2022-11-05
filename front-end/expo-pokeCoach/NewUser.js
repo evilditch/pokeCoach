@@ -6,7 +6,19 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 const Stack = createNativeStackNavigator()
 
+const categories = [
+  { name: 'Mood, stress and anxiety', importance: 0 },
+  { name: 'Sleep and recovery', importance: 0 },
+  { name: 'Daily routines, chores and time management', importance: 0 },
+  { name: 'Getting things done and concentration', importance: 0 },
+  { name: 'Physical activity and exercise', importance: 0 },
+  { name: 'Social life and relationships', importance: 0 },
+  { name: 'Personal economy', importance: 0 }
+]
+
+
 const NewUser = () => {
+  
   const [name, setName] = React.useState('')
   const [pronouns, setPronouns] = React.useState()
   
@@ -26,19 +38,19 @@ const NewUser = () => {
         <Stack.Screen 
           name="screen1"
           options={{ title: 'Who are you?' }}>
-        {(props) => <Screen1 {...props} nameChanged={nameChanged} pronounsChanged={pronounsChanged} pronouns={pronouns} />}
+        {(props) => <Screen1 {...props} name={name} nameChanged={nameChanged} pronounsChanged={pronounsChanged} pronouns={pronouns} />}
         </Stack.Screen>
         <Stack.Screen
           name="screen2"
-        options={{ title: 'Where we can help you?'}} >
-        {() => <Screen2 name={name} />}
+        options={{ title: 'Where can we help you?'}} >
+        {(props) => <Screen2 {...props} name={name} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   )
 }
 
-const Screen1 = ({ navigation, nameChanged, pronounsChanged, pronouns }) => {
+const Screen1 = ({ navigation, name, nameChanged, pronounsChanged, pronouns }) => {
   
   return (
     <View>
@@ -58,7 +70,7 @@ const Screen1 = ({ navigation, nameChanged, pronounsChanged, pronouns }) => {
         <Picker.Item label="he/him" value="he" />
         <Picker.Item label="they/them" value="they" />
       </Picker>
-          <Button title="Next" onPress={() => navigation.navigate('screen2')} />
+      <Button disabled={!name} title="Next" onPress={() => navigation.navigate('screen2')} />
     </View>
   )
 }
@@ -67,7 +79,8 @@ const Screen2 = ({ navigation, name }) => {
   return (
     <View>
       <Text>Nice to meet you, { name }!</Text>
-      <Text>Now, choose which areas you need help</Text>
+      <Text>Now, choose which areas you need help with</Text>
+    { categories.map((category, index) => <Text key={index}>{category.name}</Text>)}
     </View>
   )
 }
