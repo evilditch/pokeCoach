@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { View, Text, TextInput, Button } from 'react-native'
+import { StyleSheet, View, Text, TextInput, Button, Switch } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 const Stack = createNativeStackNavigator()
 
 const categories = [
-  { name: 'Mood, stress and anxiety', importance: 0 },
+  { name: 'Mood, stress and anxiety', importance: 1 },
   { name: 'Sleep and recovery', importance: 0 },
   { name: 'Daily routines, chores and time management', importance: 0 },
   { name: 'Getting things done and concentration', importance: 0 },
@@ -76,13 +76,45 @@ const Screen1 = ({ navigation, name, nameChanged, pronounsChanged, pronouns }) =
 }
 
 const Screen2 = ({ navigation, name }) => {
+  const [ choices, setChoices ] = React.useState(categories) 
+  
+  const toggleSwitch = (index) => {
+    const tempChoices = choices
+    console.log(tempChoices[index])
+    
+    tempChoices[index].importance = tempChoices[index].importance === 0 ? 1 : 0
+    console.log(tempChoices[index])
+    
+    setChoices(tempChoices)
+    console.log('statessa ', choices[index])
+  }
+
   return (
     <View>
       <Text>Nice to meet you, { name }!</Text>
       <Text>Now, choose which areas you need help with</Text>
-    { categories.map((category, index) => <Text key={index}>{category.name}</Text>)}
+    { categories.map((category, index) => 
+      <>
+      <Switch
+        trackColor={{ false: "#767577", true: "#81b0ff" }}
+        thumbColor={category.importance !== 0 ? "#f5dd4b" : "#f4f3f4"}
+        ios_backgroundColor="#3e3e3e"
+        onValueChange={() => toggleSwitch(index)}
+        value={category.importance !== 0}
+        />
+      <Text key={index}>{category.name}</Text>
+        </>)}
     </View>
   )
 }
 
 export default NewUser
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
