@@ -21,6 +21,18 @@ const NewUser = () => {
   
   const [name, setName] = React.useState('')
   const [pronouns, setPronouns] = React.useState()
+  const [choices, setChoices] = React.useState(categories) 
+  
+  const toggleSwitch = (index) => {
+    const tempChoices = choices
+    console.log(tempChoices[index])
+    
+    tempChoices[index].importance = tempChoices[index].importance === 0 ? 1 : 0
+    console.log(tempChoices[index])
+    
+    setChoices(tempChoices)
+    console.log('statessa ', choices[index])
+  }
   
   const nameChanged = (name) => {
     console.log('name ' + name)
@@ -42,8 +54,8 @@ const NewUser = () => {
         </Stack.Screen>
         <Stack.Screen
           name="screen2"
-        options={{ title: 'Where can we help you?'}} >
-        {(props) => <Screen2 {...props} name={name} />}
+          options={{ title: 'Where can we help you?'}} >
+        {(props) => <Screen2 {...props} name={name} choices={choices} toggleSwitch={toggleSwitch} />}
         </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
@@ -75,35 +87,23 @@ const Screen1 = ({ navigation, name, nameChanged, pronounsChanged, pronouns }) =
   )
 }
 
-const Screen2 = ({ navigation, name }) => {
-  const [ choices, setChoices ] = React.useState(categories) 
-  
-  const toggleSwitch = (index) => {
-    const tempChoices = choices
-    console.log(tempChoices[index])
-    
-    tempChoices[index].importance = tempChoices[index].importance === 0 ? 1 : 0
-    console.log(tempChoices[index])
-    
-    setChoices(tempChoices)
-    console.log('statessa ', choices[index])
-  }
+const Screen2 = ({ navigation, name, choices, toggleSwitch }) => {
 
   return (
     <View>
       <Text>Nice to meet you, { name }!</Text>
       <Text>Now, choose which areas you need help with</Text>
-    { categories.map((category, index) => 
+    { choices.map((category, index) => 
       <>
       <Switch
-      accessibilityLabel={category.name}
+        accessibilityLabel={category.name}
         trackColor={{ false: "#767577", true: "#81b0ff" }}
-        thumbColor={category.importance !== 0 ? "#f5dd4b" : "#f4f3f4"}
+        thumbColor={category.importance > 0 ? "#f5dd4b" : "#f4f3f4"}
         ios_backgroundColor="#3e3e3e"
         onValueChange={() => toggleSwitch(index)}
-        value={category.importance !== 0}
+        value={category.importance > 0}
         />
-      <Text key={index}>{category.name}</Text>
+        <Text key={index}>{category.name}</Text>
         </>)}
     </View>
   )
