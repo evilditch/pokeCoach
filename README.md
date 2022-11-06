@@ -36,7 +36,20 @@ So many problems, so much stress, so much planning, so many apps this makes me a
 
 The base for life improvement is creation of a daily schedule depending on users needs. For example If major executive function issues then a very spesific daily schedule is available, if mood is the only major issue, then matters concerning mood improvement are scheduled. The application will be very flexible when faced with changing needs or need for stronger behavioral support.
 
-### Issue: Time management – Schedule template might contains...
+### Issue with Time Management – Schedule template might contains...
 
 If strong support is needed, gives suggestions for including buffers, off-time and easily overlooked time consumers like transitions, buffers, personal hygiene and food preparation.
+
+- Sleep: 
+  - Count time period before sleep
+  - Evening rutines
+  - Mindfullnes or breathing exercises 
+- Morning activities:
+  - Suggests actually checking how long things take for you (instead of how long they usually take or how long would you want it to take)
+- School/work:
+  - Countdown reminders until you have to leave from home
+  - Support in prioritization of tasks
+  - Countdown reminders until deadlines
+
+...And much more....
 
