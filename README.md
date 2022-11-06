@@ -57,7 +57,7 @@ If strong support is needed, gives suggestions for including buffers, off-time a
 
 Our team consists of diverse educational backgrounds, genders and neurotypes.
 
-Samuli Shintami: Psychologist
-Ronja Pahaoja: Accessibility Specialist and Master's tudent in Data Science 
-Jesper Oja: Student of Software Engineering 
-Jenni Javanainen: Student of Software Engineering 
+Samuli Shintami: Psychologist  
+Ronja Pahaoja: Accessibility Specialist and Master's tudent in Data Science   
+Jesper Oja: Student of Software Engineering   
+Jenni Javanainen: Student of Software Engineering   
