@@ -1,31 +1,27 @@
 import * as React from 'react'
-import { StyleSheet, Text, View, Button } from 'react-native'
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import styles from './styles'
 
 const StartScreen = ({ navigation }) => {
   return (
       <View style={styles.container}>
-        <Text>Welcome to GuideMeThrough!</Text>
-        <Button 
-          title='New user?'
+        <Text style={styles.title}>Welcome to GuideMeThrough!</Text>
+        <TouchableOpacity
+          style={styles.button}
           onPress={() => {
             console.log('painettiin New User')
             navigation.navigate('newUser')
-          }}
-        />
-        <Button title='Sign in' />
+          }}>
+          <Text>New user?</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
+          <Text>Sign in</Text>
+        </TouchableOpacity>
       </View>
   )
 }
 
 export default StartScreen
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
