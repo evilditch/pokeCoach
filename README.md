@@ -17,15 +17,15 @@ So many problems, so much stress, so much planning, so many apps this makes me a
 2.You chose - and -: What is the most pressing issue right now?
 3. Issue specific questionnaire: With answers to this questionnaire we can provide you better guidance. Would you like to take it now or later? Taking the questionnaire is recommended.
   - Getting things done and concentration - questionnaire (Answering options a) Yes b) Not really)
-      1.Do you often find it difficult to start a task and you keep procrastinating instead?
-      2. Do you often find it difficult to keep on doing what you started?
-      3. Do you often find it difficult to keep on doing what you started?
-      4. Are you feeling stressed?
-      5. Are you feeling unmotivated?
-        1.Are you feeling depressed?
-      6. Are you feeling tired?
-        1. Do you have problems with sleep?
-        2. Do you have enough time for recovering?
+    1.Do you often find it difficult to start a task and you keep procrastinating instead?
+    2. Do you often find it difficult to keep on doing what you started?
+    3. Do you often find it difficult to keep on doing what you started?
+    4. Are you feeling stressed?
+    5. Are you feeling unmotivated?
+      1.Are you feeling depressed?
+    6. Are you feeling tired?
+      1. Do you have problems with sleep?
+      2. Do you have enough time for recovering?
   - Answers to questions 4, 5 and 6 lead to question of added support on topics of Mood, stress and anxiety (4 and 5) and Sleep and recovery (6) 
 4. Answers are analyzed and presented to user. 
   - Example: "Your answers suggest difficulties with executive function which is difficulties in goal-oriented behavior, stress and issues with sleep. All of these affect our ability to get things done and focus."
@@ -53,3 +53,11 @@ If strong support is needed, gives suggestions for including buffers, off-time a
 
 ...And much more....
 
+## Our team
+
+Our team consists of diverse educational backgrounds, genders and neurotypes.
+
+Samuli Shintami: Psychologist
+Ronja Pahaoja: Accessibility Specialist and Master's tudent in Data Science 
+Jesper Oja: Student of Software Engineering 
+Jenni Javanainen: Student of Software Engineering 
