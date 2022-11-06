@@ -4,12 +4,13 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import StartScreen from './StartScreen'
 import NewUser from './NewUser'
+import styles from './styles'
 
 const Stack = createNativeStackNavigator()
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.container}>
       <Stack.Navigator initialRouteName="start">
         <Stack.Screen 
           name="start"
