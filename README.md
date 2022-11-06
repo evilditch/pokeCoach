@@ -32,3 +32,11 @@ So many problems, so much stress, so much planning, so many apps this makes me a
 5. User can accept or decline suggestions 
 6. Accepted suggestions are presented on calendar.
 
+## Personally suggestions
+
+The base for life improvement is creation of a daily schedule depending on users needs. For example If major executive function issues then a very spesific daily schedule is available, if mood is the only major issue, then matters concerning mood improvement are scheduled. The application will be very flexible when faced with changing needs or need for stronger behavioral support.
+
+### Issue: Time management – Schedule template might contains...
+
+If strong support is needed, gives suggestions for including buffers, off-time and easily overlooked time consumers like transitions, buffers, personal hygiene and food preparation.
+
