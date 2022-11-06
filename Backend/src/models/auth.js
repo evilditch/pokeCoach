@@ -21,7 +21,7 @@ Auth.init({
     },
     secretKey: {
         type: DataTypes.STRING,
-        defaultValue: "Very Secret"
+        allowNull: false
     }
 }, {
     sequelize: authSeque,

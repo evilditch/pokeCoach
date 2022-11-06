@@ -1,5 +1,9 @@
 import express from 'express';
 import { Auth } from "../models/index.js";
+import { v4 as uuidv4 } from 'uuid';
+
+
+
 
 const router = express.Router();
 
@@ -39,7 +43,9 @@ router.post('/Signin', async (req,res) => {
             error: 'Email is already in use'
         })
     }else{
-        const newUser = await Auth.create(body);
+        const uuid = uuidv4();
+        console.log(uuid);
+        const newUser = await Auth.create({email: body.email, password: body.password, secretKey: uuid});
         res.json(newUser);
     }
 })
